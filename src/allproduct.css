@@ -1,0 +1,17 @@
+.laptop, .smartphone, .computer_categories, .screen, .keyboard, .mouse, .headphone, .search-product {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px;
+}
+
+.laptop h1, .smartphone h1, .computer_categories h1, .screen h1, .keyboard h1, .mouse h1, .headphone h1, .search-product h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    margin-bottom: 40px;
+}

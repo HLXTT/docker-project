@@ -1,0 +1,160 @@
+.edit-product, .cart_products {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.edit-product p, .cart_products p {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+.edit-product-form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 20px;
+    min-width: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.edit-product-form table tr td {
+    outline: none !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: 16px;
+    text-align: left !important;
+}
+
+.edit-product-form table tr td label {
+    width: 100%;
+    font-weight: 600;
+}
+
+.edit-product-form table tr td input {
+    width: 100%;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.edit-product-table {
+    width: 100%;
+}
+
+.edit-product form, .cart_products form {
+    width: 100%;
+    outline: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.edit-product table, 
+.cart_products table  {
+    width: 100%;
+}
+
+.edit-product thead tr th, tbody tr td, 
+.cart_products thead tr th, tbody tr td {
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    outline: 2px solid black;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.edit-product table tbody tr td, 
+.cart_products table tbody tr td {
+    height: 100px;
+    width: 100px;
+}
+
+
+.edit-product tbody tr td img, 
+.cart_products tbody tr td img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+
+
+.edit-product table tbody tr td span a, 
+.cart_products table tbody tr td span a {
+    padding: 5px 10px;
+    border-radius: 10px;
+    outline: 2px solid black;
+    background-color: black;
+    color: white;
+}
+
+.edit-product table tbody tr td span a:hover, 
+.cart_products table tbody tr td span a:hover {
+    background-color: white;
+    color: black;
+}
+
+.edit-product #add {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-top: none;
+    cursor: pointer;
+}
+
+.edit-product #add a {
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+
+.edit-product #add a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.edit-product-form button {
+    background-color: black;
+    color: white;
+    padding: 5px 30px;
+    margin: 10px 0 ;
+    border-radius: 20px;
+    border: 2px solid black;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.edit-product-form form {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+
+.edit-product-form button:hover {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, aqua, #151F3A); 
+    min-width: 900px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 900px;
+}
+
+.formborder {
+    width: 32%;
+    min-width: 500px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #151F3A;
+}
+
+.form form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.form img {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.form form h1 {
+    margin-bottom: 20px;
+}
+
+.from form table {
+    width: 100%;
+}
+
+.form form table tr td label {
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form form table tr td input {
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+
+
+.form form button a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.form form button {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.form form button:hover {
+    background-color: white;
+    color: black;
+}
+
+.form form a {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 40px;
+}
+
+.form form a:hover {
+    background-color: white;
+    color: black;
+}
