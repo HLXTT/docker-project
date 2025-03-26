@@ -40,7 +40,7 @@
             </div>
 
 
-            <!-- Đơn hàng  -->
+            <!-- Đơn hàng đầu buồi  -->
             <div class="orders">
             <?php if (isset($_SESSION['mySession'])) {?>
                     <button><a href="index.php?act=orders"><i class="fa-regular fa-clipboard"></a></i></button> 
