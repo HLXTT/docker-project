@@ -3,9 +3,10 @@
 </p>
 
 <div class='cart_products' style='border: none'>
-    <?php
+    
+<?php
         $user_id = $_SESSION['mySession'];
-
+        
         $sql = "SELECT * FROM orders";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);

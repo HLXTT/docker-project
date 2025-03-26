@@ -1,5 +1,6 @@
 <?php
     ob_start();
+    include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,12 @@
 
             <!-- Đơn hàng  -->
             <div class="orders">
-                <button><a href="index.php?act=orders"><i class="fa-regular fa-clipboard"></a></i></button>
+            <?php if (isset($_SESSION['mySession'])) {?>
+                    <button><a href="index.php?act=orders"><i class="fa-regular fa-clipboard"></a></i></button> 
+            <?php } else { ?>
+                    <button><a href="login.php"><i class="fa-regular fa-clipboard"></i></a></i></button>
+            <?php } ?>
+                
             </div>
 
             <!-- Người dùng -->
