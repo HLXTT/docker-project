@@ -1,5 +1,6 @@
 <?php 
     include 'connect.php';
+    header('location: index.php?act=product');
 
     $this_id = $_GET['this_id'];
     $table = $_GET['table'];
@@ -19,7 +20,7 @@
 
             $image_row = mysqli_fetch_assoc($image_result);
 
-            unlink('http://localhost:8081/images/product/'. $image_row['image']);
+            unlink('/usr/share/nginx/html/images/product/'.$image_row['image']);
             }
 
             mysqli_query($conn, $sql);
@@ -31,5 +32,5 @@
     mysqli_query($conn, $sql);
     }
 
-    header('location: index.php?act=product');
+    
 ?>

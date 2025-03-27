@@ -30,7 +30,7 @@
         if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
             $image = $_FILES['image']['name']; //Lấy tên ảnh
             $image_tmp_name = $_FILES['image']['tmp_name']; //Lấy địa chỉ của ảnh
-            move_uploaded_file($image_tmp_name, 'http://localhost:8081/images/product/'.$image);
+            move_uploaded_file($image_tmp_name, '/usr/share/nginx/html/images/product/'.$image);
         }
         else {
             // Nếu không có file mới, giữ lại đường dẫn cũ

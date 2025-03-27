@@ -10,7 +10,7 @@
 
         mysqli_query($conn, $sql);
 
-        move_uploaded_file($image_tmp_name, 'http://localhost:8081/images/posters/'.$image);
+        move_uploaded_file($image_tmp_name, '/usr/share/nginx/html/images/posters/'.$image);
 
         header('location: index.php?act=poster');
         exit();

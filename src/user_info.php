@@ -34,7 +34,7 @@
         $image = $_FILES['user_image']['name']; //Lấy tên ảnh
         $image_tmp_name = $_FILES['user_image']['tmp_name']; //Lấy địa chỉ của ảnh
 
-        move_uploaded_file($image_tmp_name, 'image/user_avatars/'.$image);
+        move_uploaded_file($image_tmp_name, '/usr/share/nginx/html/images/user_avatars/'.$image);
 
 
         $sql1 = "UPDATE accounts SET full_name = '$full_name', user_image = '$image', email = '$email', phone_number = '$phone_number', address = '$address', username = '$username', password = '$password', level = '$level' WHERE user_id = $user_id";

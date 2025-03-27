@@ -68,7 +68,7 @@
 
                                 $user_name = $row['username']; ?>
 
-                                <img src="./image/user_avatars/<?php echo $row['user_image']?>" alt="" style="border: 2px solid white">
+                                <img src="http://localhost:8081/images/user_avatars/<?php echo $row['user_image']?>" alt="" style="border: 2px solid white">
 
 
                                 <div style="display: flex; justify-content: center; width: 100%">

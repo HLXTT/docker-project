@@ -25,7 +25,7 @@
         $image = $_FILES['image']['name']; //Lấy tên ảnh
         $image_tmp_name = $_FILES['image']['tmp_name']; //Lấy địa chỉ của ảnh
 
-        move_uploaded_file($image_tmp_name, 'http://localhost:8081/images/product/'.$image);
+        move_uploaded_file($image_tmp_name, '/usr/share/nginx/html/images/product/'.$image);
 
         $sql2 = "SELECT * FROM products WHERE name = '$name'";
         $result = mysqli_query($conn, $sql2);

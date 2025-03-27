@@ -346,7 +346,7 @@
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) {
         ?>
-            <a href="index.php?table=deal" class="poster"><img src="./http://localhost:8081/images/posters/<?php echo $row['poster_image'] ?>" alt="Sale off"></a>
+            <a href="index.php?table=deal" class="poster"><img src="http://localhost:8081/images/posters/<?php echo $row['poster_image'] ?>" alt="Sale off"></a>
         <?php }?>
 
         <div class="show-area">

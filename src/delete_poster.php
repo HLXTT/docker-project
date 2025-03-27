@@ -8,7 +8,7 @@
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
 
-        unlink('http://localhost:8081/images/posters/'. $row['image']);
+        unlink('/usr/share/nginx/html/images/posters/'. $row['poster_image']);
 
         $sql1 = "DELETE FROM posters WHERE poster_id = '$poster_id'";
 
