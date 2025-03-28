@@ -29,7 +29,7 @@ services:
     ports:
       - "3306:3306"
 
-  image_server:
+  image-server:
     image: nginx:latest
     container_name: image-server
     volumes:
@@ -39,7 +39,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin_container
+    container_name: phpmyadmin-container
     restart: always
     depends_on:
       - db
