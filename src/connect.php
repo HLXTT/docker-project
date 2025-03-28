@@ -1,6 +1,6 @@
 <?php
 
-    $server = 'mysql-db';
+    $server = 'db';
     $user = 'user';
     $pass = 'password';
     $database = 'website';
