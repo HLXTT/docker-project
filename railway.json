@@ -1,0 +1,17 @@
+{
+    "services": [
+      {
+        "name": "php-app",
+        "env": {},
+        "buildCommand": "docker build -t php-app .",
+        "startCommand": "docker run -p 8080:80 php-app"
+      },
+      {
+        "name": "nginx",
+        "env": {},
+        "buildCommand": "docker build -t nginx-image ./nginx",
+        "startCommand": "docker run -p 8081:80 nginx-image"
+      }
+    ]
+  }
+  

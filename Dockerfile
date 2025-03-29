@@ -1,14 +1,20 @@
-# Sử dụng image PHP có Apache tích hợp sẵn
-FROM php:8.1-apache
+# Sử dụng PHP với Apache
+FROM php:7.4-apache
 
-# Cài đặt các extension cần thiết cho PHP (ví dụ: MySQLi, PDO MySQL)
+# Cài đặt các extensions cần thiết
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Copy toàn bộ mã nguồn vào thư mục gốc của Apache
-COPY ./src/ /var/www/html/
+# Kích hoạt module mod_rewrite
+RUN a2enmod rewrite
 
-# Phân quyền cho thư mục web
+# Copy mã nguồn vào container
+COPY ./src /var/www/html
+
+# Phân quyền cho thư mục chứa mã nguồn
 RUN chown -R www-data:www-data /var/www/html
 
-# Mở cổng 80 để chạy Apache
+# Expose cổng 80
 EXPOSE 80
+
+# Start Apache
+CMD ["apache2-foreground"]

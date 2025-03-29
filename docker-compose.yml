@@ -24,7 +24,6 @@ services:
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
-      - ./images:/usr/share/nginx/html/images
       - ./php:/var/www/html
     ports:
       - "3306:3306"
