@@ -3,13 +3,13 @@
     {
       "name": "php-app",
       "env": {},
-      "dockerfile": "Dockerfile",
+      "dockerfile": "./Dockerfile",
       "autoDeploy": true
     },
     {
       "name": "nginx",
       "env": {},
-      "dockerfile": "nginx/Dockerfile",
+      "dockerfile": "./nginx/Dockerfile",
       "autoDeploy": true
     }
   ]
