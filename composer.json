@@ -1,0 +1,16 @@
+{
+    "name": "longdang171/docker-project",
+    "description": "PHP application deployed on Railway",
+    "require": {
+        "php": ">=7.4",
+        "ext-mysqli": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": "php -S 0.0.0.0:8080 -t src"
+    }
+}
