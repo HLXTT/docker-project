@@ -1,9 +1,13 @@
-# Sử dụng Nginx làm server
 FROM nginx:latest
 
-# Copy thư mục chứa hình ảnh vào thư mục mặc định của Nginx
-COPY ./images /usr/share/nginx/html/images
-#COPY nginx/nginx.conf /etc/nginx/nginx.conf
+# Tạo thư mục chứa ảnh (tránh lỗi nếu chưa tồn tại)
+RUN mkdir -p /usr/share/nginx/html/images
 
-# Expose cổng 80
-EXPOSE 80
+# Copy ảnh vào container
+COPY images /usr/share/nginx/html/images
+
+# Copy file cấu hình Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Chạy Nginx ở foreground (tránh container bị dừng ngay)
+CMD ["nginx", "-g", "daemon off;"]

@@ -33,6 +33,8 @@ services:
       context: .
       dockerfile: Dockerfile-nginx  # Sử dụng Dockerfile riêng cho Nginx
     container_name: my-nginx
+    volumes:
+      - ./images:/usr/share/nginx/html/images  # Gắn thư mục ảnh vào Nginx
     ports:
       - "8081:80"
 
