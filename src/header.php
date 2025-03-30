@@ -19,7 +19,7 @@
         <div class="header-left">
             <!-- Logo thương hiệu -->
             <div class="logo">
-                <a href="index.php"><img src="http://localhost:8081/images/logo.jpg" alt="logo" class="logo-img"></a>
+                <a href="index.php"><img src="https://https://docker-project-production.up.railway.app/images/logo.jpg" alt="logo" class="logo-img"></a>
             </div>
         </div>
 
