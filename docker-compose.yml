@@ -3,7 +3,7 @@ version: "3.8"
 services:
   web:
     build: .
-    container_name: php-app
+    container_name: php-web
     ports:
       - "8080:80"
     volumes:
@@ -14,7 +14,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: mysql-db
+    container_name: web-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -38,7 +38,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin-container
+    container_name: web-phpmyadmin
     restart: always
     depends_on:
       - db
