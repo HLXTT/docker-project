@@ -23,7 +23,7 @@
                 ?>
                     <tr>
                         <td><?php echo $row['poster_id'];?></td>
-                        <td><img src="http://localhost:8081/images/posters/<?php echo $row['poster_image'];?>" alt="" style="width: 100% !important; height: 200px !important"></td>
+                        <td><img src="https://docker-project-image-server-production.up.railway.app/images/posters/<?php echo $row['poster_image'];?>" alt="" style="width: 100% !important; height: 200px !important"></td>
                         <td><?php echo $row['poster_type'];?></td>
                         <td><span><a href="delete_poster.php? this_id=<?php echo $row['poster_id']?>">Delete</a></span></td>
                     </tr>

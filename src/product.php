@@ -62,7 +62,7 @@
                         <td>$<?php echo $row['price'];?></td>
                         <td><?php echo $row['discount'];?>%</td>
                         <td>$<?php echo $row['final_price'];?></td>
-                        <td><img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></td>
+                        <td><img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></td>
                         <td><?php echo $row['warranty_period'];?></td>
                         <td><?php echo $row['stock_quantity'];?></td>
                         <td><?php echo $row['status'];?></td>
@@ -118,7 +118,7 @@
                         <td>$<?php echo $row['price'];?></td>
                         <td><?php echo $row['discount'];?>%</td>
                         <td>$<?php echo $row['final_price'];?></td>
-                        <td><img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></td>
+                        <td><img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></td>
                         <td><?php echo $row['warranty_period'];?></td>
                         <td><?php echo $row['stock_quantity'];?></td>
                         <td><?php echo $row['status'];?></td>
@@ -174,7 +174,7 @@
                         <td>$<?php echo $row['price'];?></td>
                         <td><?php echo $row['discount'];?>%</td>
                         <td>$<?php echo $row['final_price'];?></td>
-                        <td><img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></td>
+                        <td><img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['name'];?>"></td>
                         <td><?php echo $row['warranty_period'];?></td>
                         <td><?php echo $row['stock_quantity'];?></td>
                         <td><?php echo $row['status'];?></td>

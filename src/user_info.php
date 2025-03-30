@@ -48,7 +48,7 @@
 <div class="form">
     <div class="formborder">
         <form action="index.php?act=user_info" method='post' enctype="multipart/form-data">
-            <img src="./image/user_avatars/<?php echo $row['user_image'] ?>" alt="" 
+            <img src="https://docker-project-image-server-production.up.railway.app/images/user_avatars/<?php echo $row['user_image'] ?>" alt="" 
                 style="width: 150px; height: 150px; border-radius: 50%; border: 1px solid black">
             <table>
                 <tr>

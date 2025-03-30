@@ -38,7 +38,7 @@
     <div class='product-info'>
         <div class='product-info-content'>
             <div class='product-info-content-left'>
-                <img src="http://localhost:8081/images/product/<?php echo $row['image']?>" alt="">
+                <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image']?>" alt="">
             </div>
             <div class='product-info-content-right'> 
                 <h1><?php echo $row['name']?></h1>

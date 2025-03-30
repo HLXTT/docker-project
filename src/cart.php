@@ -40,7 +40,7 @@
                 <tr>
                     <td><?php echo $row['product_id'];?></td>
                     <td><?php echo $row['product_name'];?></td>
-                    <td><img src="http://localhost:8081/images/product/<?php echo $row['product_image'];?>" alt="<?php echo $row['product_name'];?>"></td>
+                    <td><img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['product_image'];?>" alt="<?php echo $row['product_name'];?>"></td>
                     <td><?php echo $row['product_type'];?></td>
                     <td>$<?php echo $row['unit_price'];?></td>
                     <td><?php echo $row['quantity'];?></td>
@@ -104,7 +104,7 @@
                     <td><?php echo $row['full_name'];?></td>
                     <td><?php echo $row['product_name'];?></td>
                     <td><?php echo $row['type'];?></td>
-                    <td><img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['image'];?>"></td>
+                    <td><img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="<?php echo $row['image'];?>"></td>
                     <td><?php echo $row['unit_price'];?></td>
                     <td><?php echo $row['quantity'];?></td>
                     <td>$<?php echo $row['total_price'];?></td>

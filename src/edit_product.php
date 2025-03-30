@@ -100,7 +100,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="image"><img src="http://localhost:8081/images/product/<?php echo $row['image'] ?>" alt="" style='width: 100px; height: 100px'></label>
+                    <label for="image"><img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'] ?>" alt="" style='width: 100px; height: 100px'></label>
                 </td>
                 <td>
                     <input type="file" id="image" name="image" value="<?php echo $row['image'] ?>">
