@@ -1,9 +1,9 @@
 <?php
 
     $server = 'mysql.railway.internal';
-    $user = 'user';
-    $pass = 'password';
-    $database = 'website';
+    $user = 'root';
+    $pass = 'LNNDnPHPdoqCZHZbudFhiDqEbVneScdF';
+    $database = 'railway';
 
     $conn = new mysqli($server, $user, $pass, $database);
 
