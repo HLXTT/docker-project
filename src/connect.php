@@ -1,6 +1,6 @@
 <?php
 
-    $server = 'db';
+    $server = 'mysql.railway.internal';
     $user = 'user';
     $pass = 'password';
     $database = 'website';
