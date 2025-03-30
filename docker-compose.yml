@@ -29,12 +29,12 @@ services:
       - "3306:3306"
 
   image-server:
-    image: nginx:latest
-    container_name: image-server
-    volumes:
-      - ./images:/usr/share/nginx/html/images  # Mount thư mục chứa ảnh
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx  # Sử dụng Dockerfile riêng cho Nginx
+    container_name: my-nginx
     ports:
-      - "8081:80"  # Chạy Nginx trên cổng 8081 để truy cập ảnh
+      - "8081:80"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
