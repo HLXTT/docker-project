@@ -16,7 +16,7 @@
             }
             $count += 1 ?>
             <div class="slide">
-                <img src="http://localhost:8081/images/posters/<?php echo $row['poster_image'] ?>" alt="<?php $row['poster_image'] ?>">
+                <img src="https://docker-project-image-server-production.up.railway.app/images/posters/<?php echo $row['poster_image'] ?>" alt="<?php $row['poster_image'] ?>">
                 <div class="numbertext" style="font-size: 30px; font-weight: 700"><?php echo $count ?> / <?php echo $totalSlides ?></div>
             </div>
         <?php }?>
@@ -51,7 +51,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -100,7 +100,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -148,7 +148,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -208,7 +208,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -256,7 +256,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -304,7 +304,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -346,7 +346,7 @@
             $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($result)) {
         ?>
-            <a href="index.php?table=deal" class="poster"><img src="http://localhost:8081/images/posters/<?php echo $row['poster_image'] ?>" alt="Sale off"></a>
+            <a href="index.php?table=deal" class="poster"><img src="https://docker-project-image-server-production.up.railway.app/images/posters/<?php echo $row['poster_image'] ?>" alt="Sale off"></a>
         <?php }?>
 
         <div class="show-area">
@@ -368,7 +368,7 @@
                     ?>
                     <a href="#" class="product_a">
                         <div class="product" style="margin: 10px !important;">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -416,7 +416,7 @@
                     ?>
                     <a href="#" class="product_a">
                     <div class="product" style="margin: 10px !important;">
-                        <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                        <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -464,7 +464,7 @@
                     ?>
                     <a href="#" class="product_a">
                     <div class="product" style="margin: 10px !important;">
-                        <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                        <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -527,7 +527,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -576,7 +576,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
@@ -624,7 +624,7 @@
                 ?>
                     <a href="#" class="product_a">
                         <div class="product">
-                            <img src="http://localhost:8081/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
