@@ -4,7 +4,6 @@ services:
   web:
     build: .
     container_name: php-web
-    user: "www-data"
     restart: always
     ports:
       - "8080:80"
