@@ -26,19 +26,16 @@ services:
       - db_data:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password  # Fix lỗi xác thực khi kết nối
 
-  version: '3.9'
-  services:
-    image-server:
-      build:
-        context: .
-        dockerfile: Dockerfile-nginx
-      restart: always
-      volumes:
-        - images:/usr/share/nginx/html/images
-      ports:
-        - "8081:80"
-
-
+  image-server:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    container_name: my-nginx
+    restart: always
+    volumes:
+      - images-data:/usr/share/nginx/html/images
+    ports:
+      - "8081:80"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -56,4 +53,4 @@ services:
 
 volumes:
   db_data:
-  images:
+  images-data:
