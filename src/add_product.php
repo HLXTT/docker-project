@@ -30,6 +30,7 @@
 // Kiểm tra và tạo thư mục nếu chưa có
         if (!file_exists($uploadDir)) {
             echo $uploadDir;
+            echo exec('whoami');
             if (!mkdir($uploadDir, 0775, true)) {
                 
                 die("Lỗi: Không thể tạo thư mục upload! " . error_get_last()['message']);
