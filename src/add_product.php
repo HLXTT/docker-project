@@ -28,8 +28,8 @@
         $uploadDir = '/usr/share/nginx/html/images/product/';
 
 // Kiểm tra và tạo thư mục nếu chưa có
-        echo ini_get('open_basedir');
         if (!file_exists($uploadDir)) {
+            print_r(error_get_last());
             if (!mkdir($uploadDir, 0775, true)) {
                 
                 die("Lỗi: Không thể tạo thư mục upload!");
