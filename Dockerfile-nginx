@@ -1,7 +1,7 @@
 FROM nginx:latest
 
 # Tạo thư mục chứa ảnh (nếu chưa tồn tại)
-RUN mkdir -p /usr/share/nginx/html/images/product
+RUN mkdir -p /usr/share/nginx/html/images/
 
 # Cấp quyền cho user PHP (www-data)
 RUN chown -R www-data:www-data /usr/share/nginx/html/images && \
