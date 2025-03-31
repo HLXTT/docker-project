@@ -90,7 +90,7 @@
             mysqli_query($conn, $sql);
         }
 
-        header('location: index.php?act=product');
+        #header('location: index.php?act=product');
         exit();
    } 
 ?>
