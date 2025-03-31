@@ -54,4 +54,4 @@ services:
 
 volumes:
   db_data:
-  images-data:
+  images:
