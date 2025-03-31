@@ -28,10 +28,12 @@
         $uploadDir = '/usr/share/nginx/html/images/product/';
 
 // Kiểm tra và tạo thư mục nếu chưa có
-        if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0775, true); // Tạo thư mục với quyền ghi
-            chown($uploadDir, 'www-data'); // Chuyển quyền sở hữu về PHP user
-            chmod($uploadDir, 0775); // Đảm bảo quyền ghi
+        if (!file_exists($uploadDir)) {
+            if (!mkdir($uploadDir, 0775, true)) {
+                die("Lỗi: Không thể tạo thư mục upload!");
+            }
+            chown($uploadDir, 'www-data');
+            chmod($uploadDir, 0775);
         }
 
         $uploadFile = $uploadDir . basename($_FILES['image']['name']);
@@ -40,7 +42,9 @@
             echo "Upload thành công: " . basename($_FILES['image']['name']);
         } else {
             echo "Upload thất bại! Kiểm tra quyền ghi hoặc đường dẫn!";
+            print_r(error_get_last());
         }
+
 
 
 
