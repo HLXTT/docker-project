@@ -25,7 +25,22 @@
         $image = $_FILES['image']['name']; //Lấy tên ảnh
         $image_tmp_name = $_FILES['image']['tmp_name']; //Lấy địa chỉ của ảnh
 
-        move_uploaded_file($image_tmp_name, '/usr/share/nginx/html/images/product/'.$image);
+        $uploadDir = '/usr/share/nginx/html/images/product/';
+
+        // Kiểm tra và tạo thư mục nếu chưa có
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true); // Tạo thư mục với quyền ghi
+        }
+
+        $uploadFile = $uploadDir . basename($image);
+
+        // Upload ảnh
+        if (move_uploaded_file($image_tmp_name, $uploadFile)) {
+            echo "Upload thành công: " . $image;
+        } else {
+            echo "Upload thất bại!";
+        }
+
 
         $sql2 = "SELECT * FROM products WHERE name = '$name'";
         $result = mysqli_query($conn, $sql2);
