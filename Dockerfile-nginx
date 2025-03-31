@@ -13,5 +13,5 @@ COPY images/ /usr/share/nginx/html/images/
 # Copy file cấu hình Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Chạy Nginx ở foreground
-CMD ["nginx", "-g", "daemon off;"]
+# Script khởi động: Copy ảnh vào volume nếu chưa có dữ liệu
+CMD ["/bin/sh", "-c", "cp -n /image-backup/* /usr/share/nginx/html/images/ && nginx -g 'daemon off;'"]
