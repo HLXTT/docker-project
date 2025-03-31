@@ -3,9 +3,9 @@ FROM nginx:latest
 # Tạo thư mục chứa ảnh (nếu chưa tồn tại)
 RUN mkdir -p /usr/share/nginx/html/images/product
 
-# Cấp quyền nhưng không dùng 777
-RUN chmod -R 775 /usr/share/nginx/html/images && \
-    chown -R nginx:nginx /usr/share/nginx/html/images
+# Cấp quyền cho user PHP (www-data)
+RUN chown -R www-data:www-data /usr/share/nginx/html/images && \
+    chmod -R 775 /usr/share/nginx/html/images
 
 # Copy ảnh vào container (nếu có sẵn)
 COPY images/ /usr/share/nginx/html/images/
