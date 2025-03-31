@@ -33,9 +33,10 @@ services:
     container_name: my-nginx
     restart: always
     volumes:
-      - images-data:/usr/share/nginx/html/images
+      - /usr/share/nginx/html/images:/usr/share/nginx/html/images"
     ports:
       - "8081:80"
+
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
