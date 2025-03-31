@@ -27,19 +27,21 @@
 
         $uploadDir = '/usr/share/nginx/html/images/product/';
 
-        // Kiểm tra và tạo thư mục nếu chưa có
+// Kiểm tra và tạo thư mục nếu chưa có
         if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0777, true); // Tạo thư mục với quyền ghi
+            mkdir($uploadDir, 0775, true); // Tạo thư mục với quyền ghi
+            chown($uploadDir, 'www-data'); // Chuyển quyền sở hữu về PHP user
+            chmod($uploadDir, 0775); // Đảm bảo quyền ghi
         }
 
-        $uploadFile = $uploadDir . basename($image);
+        $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
-        // Upload ảnh
-        if (move_uploaded_file($image_tmp_name, $uploadFile)) {
-            echo "Upload thành công: " . $image;
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+            echo "Upload thành công: " . basename($_FILES['image']['name']);
         } else {
-            echo "Upload thất bại!";
+            echo "Upload thất bại! Kiểm tra quyền ghi hoặc đường dẫn!";
         }
+
 
 
         $sql2 = "SELECT * FROM products WHERE name = '$name'";
