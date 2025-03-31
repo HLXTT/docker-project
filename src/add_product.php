@@ -29,7 +29,8 @@
 
 // Kiểm tra và tạo thư mục nếu chưa có
         if (!file_exists($uploadDir)) {
-            echo $uploadDir;
+            echo ini_get('disable_functions');
+            echo ini_get('open_basedir');
             echo exec('whoami');
             if (!mkdir($uploadDir, 0775, true)) {
                 
