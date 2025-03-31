@@ -32,7 +32,7 @@
             echo $uploadDir;
             if (!mkdir($uploadDir, 0775, true)) {
                 
-                die("Lỗi: Không thể tạo thư mục upload!");
+                die("Lỗi: Không thể tạo thư mục upload! " . error_get_last()['message']);
             }
             // Sử dụng quyền root để thay đổi owner
             chown($uploadDir, 'root');
