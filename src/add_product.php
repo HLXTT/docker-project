@@ -37,8 +37,6 @@
                 die("Lỗi: Không thể tạo thư mục upload! " . error_get_last()['message']);
             }
             // Sử dụng quyền root để thay đổi owner
-            chown($uploadDir, 'root');
-            chmod($uploadDir, 0775);
         }
 
         $uploadFile = $uploadDir . basename($_FILES['image']['name']);
