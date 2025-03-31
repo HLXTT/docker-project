@@ -32,7 +32,8 @@
             if (!mkdir($uploadDir, 0775, true)) {
                 die("Lỗi: Không thể tạo thư mục upload!");
             }
-            chown($uploadDir, 'www-data');
+            // Sử dụng quyền root để thay đổi owner
+            chown($uploadDir, 'root');
             chmod($uploadDir, 0775);
         }
 
@@ -44,6 +45,7 @@
             echo "Upload thất bại! Kiểm tra quyền ghi hoặc đường dẫn!";
             print_r(error_get_last());
         }
+
 
 
 
