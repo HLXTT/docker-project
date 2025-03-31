@@ -28,9 +28,10 @@
         $uploadDir = '/usr/share/nginx/html/images/product/';
 
 // Kiểm tra và tạo thư mục nếu chưa có
+        echo ini_get('open_basedir');
         if (!file_exists($uploadDir)) {
             if (!mkdir($uploadDir, 0775, true)) {
-                echo ini_get('open_basedir');
+                
                 die("Lỗi: Không thể tạo thư mục upload!");
             }
             // Sử dụng quyền root để thay đổi owner
