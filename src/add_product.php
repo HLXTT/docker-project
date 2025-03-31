@@ -26,21 +26,7 @@
         $image_tmp_name = $_FILES['image']['tmp_name']; //Lấy địa chỉ của ảnh
 
         $uploadDir = '/usr/share/nginx/html/images/product/';
-
-// Kiểm tra và tạo thư mục nếu chưa có
-        if (!file_exists($uploadDir)) {
-            echo ini_get('disable_functions');
-            echo ini_get('open_basedir');
-            echo exec('whoami');
-            if (!mkdir($uploadDir, 0775, true)) {
-                
-                die("Lỗi: Không thể tạo thư mục upload! " . error_get_last()['message']);
-            }
-            // Sử dụng quyền root để thay đổi owner
-            chown($uploadDir, 'root');
-            chmod($uploadDir, 0775);
-        }
-
+        
         $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
