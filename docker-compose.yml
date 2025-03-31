@@ -33,9 +33,9 @@ services:
     container_name: my-nginx
     restart: always
     volumes:
-      - /usr/share/nginx/html/images:/usr/share/nginx/html/images"
+      - ${RAILWAY_VOLUME_MOUNT_PATH}:/usr/share/nginx/html/images
     ports:
-      - "8081:80"
+      - "${PORT}:80"
 
 
   phpmyadmin:
