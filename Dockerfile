@@ -6,14 +6,14 @@ RUN apt-get update && apt-get install -y nginx \
     && docker-php-ext-install pdo_mysql gd
 
 # Sao chép code PHP
-COPY php/ /var/www/
+COPY src/ /var/www/
 RUN chmod -R 755 /var/www
 
 # Sao chép cấu hình Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Tạo thư mục ảnh và phân quyền cho www-data
-RUN mkdir -p /usr/share/nginx/html/images/product \
+RUN mkdir -p /usr/share/nginx/html/images/ \
     && chown -R www-data:www-data /usr/share/nginx/html/images \
     && chmod -R 755 /usr/share/nginx/html/images
 
