@@ -1,22 +1,27 @@
-FROM php:8.1-apache
+FROM php:8.1-fpm
 
-# Cài đặt các extensions cần thiết
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Cài Nginx
+RUN apt-get update && apt-get install -y nginx \
+    && apt-get install -y libpng-dev libjpeg-dev \
+    && docker-php-ext-install pdo_mysql gd
 
-# Kích hoạt module mod_rewrite
-RUN a2enmod rewrite
+# Sao chép code PHP
+COPY php/ /var/www/
+RUN chmod -R 755 /var/www
 
-# Copy mã nguồn vào container
-COPY ./src /var/www/html
+# Sao chép cấu hình Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Phân quyền cho thư mục chứa mã nguồn
-RUN chown -R www-data:www-data /var/www/html
+# Tạo thư mục ảnh
+RUN mkdir -p /usr/share/nginx/html/images
+RUN chmod -R 755 /usr/share/nginx/html/images
+COPY images/* /usr/share/nginx/html/images/  
 
-# Cấu hình ServerName để tránh lỗi
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+# Định nghĩa volume cho ảnh
+VOLUME /usr/share/nginx/html/images
 
-# Expose cổng 80
+# Mở cổng
 EXPOSE 80
 
-# Start Apache
-CMD ["apachectl", "-D", "FOREGROUND"]
+# Chạy cả Nginx và PHP-FPM
+CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]

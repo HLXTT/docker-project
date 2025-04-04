@@ -25,26 +25,41 @@
         $image = $_FILES['image']['name']; //Lấy tên ảnh
         $image_tmp_name = $_FILES['image']['tmp_name']; //Lấy địa chỉ của ảnh
 
+        
+
+        
+// Đường dẫn đến thư mục trong volume
         $uploadDir = '/usr/share/nginx/html/images/product/';
 
-// Kiểm tra và tạo thư mục nếu chưa có
+        // Kiểm tra và tạo thư mục nếu chưa có
         if (!file_exists($uploadDir)) {
-            echo exec('whoami');
-            if (!mkdir($uploadDir, 0775, true)) {
-                
+            // Kiểm tra quyền ghi trước khi tạo thư mục
+            if (!is_writable(dirname($uploadDir))) {
+                die("Lỗi: Thư mục cha không có quyền ghi! Đảm bảo volume được cấu hình đúng.");
+            }
+            
+            if (!mkdir($uploadDir, 0755, true)) {
                 die("Lỗi: Không thể tạo thư mục upload! " . error_get_last()['message']);
             }
-            // Sử dụng quyền root để thay đổi owner
         }
 
+        // Đường dẫn file đích
         $uploadFile = $uploadDir . basename($_FILES['image']['name']);
 
+        // Kiểm tra quyền ghi thư mục trước khi upload
+        if (!is_writable($uploadDir)) {
+            die("Lỗi: Thư mục '$uploadDir' không có quyền ghi!");
+        }
+
+        // Thực hiện upload
         if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
             echo "Upload thành công: " . basename($_FILES['image']['name']);
         } else {
-            echo "Upload thất bại! Kiểm tra quyền ghi hoặc đường dẫn!";
-            print_r(error_get_last());
+            $error = error_get_last();
+            echo "Upload thất bại! Kiểm tra quyền ghi hoặc đường dẫn!<br>";
+            echo "Chi tiết lỗi: " . ($error['message'] ?? 'Không xác định');
         }
+
 
 
 
