@@ -1,9 +1,9 @@
 <?php
 
-    $server = 'switchback.proxy.rlwy.net';
-    $port = '13633';
+    $server = 'shortline.proxy.rlwy.net';
+    $port = '14163';
     $user = 'root';
-    $pass = 'LNNDnPHPdoqCZHZbudFhiDqEbVneScdF';
+    $pass = 'UMbVWTEfYmhsqbOUSxvZSHSEoeFJPJqd';
     $database = 'railway';
 
     $conn = new mysqli($server, $user, $pass, $database, $port);
