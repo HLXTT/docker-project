@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -y nginx \
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # Sao chép code PHP từ thư mục src/
-COPY src/ /var/www/html
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+COPY src/ /var/www/
+RUN chown -R www-data:www-data /var/www/ \
+    && chmod -R 755 /var/www/
 
 # Sao chép cấu hình Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
