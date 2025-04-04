@@ -12,13 +12,14 @@ RUN chmod -R 755 /var/www
 # Sao chép cấu hình Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Tạo thư mục ảnh
-RUN mkdir -p /usr/share/nginx/html/images
-RUN chmod -R 755 /usr/share/nginx/html/images
-COPY images/* /usr/share/nginx/html/images/  
+# Tạo thư mục ảnh và phân quyền cho www-data
+RUN mkdir -p /usr/share/nginx/html/images/product \
+    && chown -R www-data:www-data /usr/share/nginx/html/images \
+    && chmod -R 755 /usr/share/nginx/html/images
 
-# Định nghĩa volume cho ảnh
-VOLUME /usr/share/nginx/html/images
+# Tăng giới hạn upload file (tùy chọn)
+RUN echo "upload_max_filesize = 10M" > /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "post_max_size = 10M" >> /usr/local/etc/php/conf.d/uploads.ini
 
 # Mở cổng
 EXPOSE 80
