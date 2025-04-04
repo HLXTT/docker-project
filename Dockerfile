@@ -5,6 +5,9 @@ RUN apt-get update && apt-get install -y nginx \
     && apt-get install -y libpng-dev libjpeg-dev \
     && docker-php-ext-install pdo_mysql gd
 
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
 # Sao chép code PHP từ thư mục src/
 COPY src/ /var/www/
 RUN chown -R www-data:www-data /var/www/ \
