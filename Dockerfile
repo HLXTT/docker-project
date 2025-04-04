@@ -14,7 +14,7 @@ RUN chown -R www-data:www-data /var/www/ \
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Tạo thư mục ảnh và phân quyền cho www-data
-RUN mkdir -p /usr/share/nginx/html/images/product \
+RUN mkdir -p /usr/share/nginx/html/images \
     && chown -R www-data:www-data /usr/share/nginx/html/images \
     && chmod -R 755 /usr/share/nginx/html/images
 
