@@ -23,7 +23,7 @@ RUN echo "upload_max_filesize = 10M" > /usr/local/etc/php/conf.d/uploads.ini \
     && echo "post_max_size = 10M" >> /usr/local/etc/php/conf.d/uploads.ini
 
 # Mở cổng
-EXPOSE 80
+EXPOSE 8080
 
 # Chạy cả Nginx và PHP-FPM, sửa quyền khi khởi động
 CMD ["sh", "-c", "chown -R www-data:www-data /usr/share/nginx/html/images && chmod -R 755 /usr/share/nginx/html/images && php-fpm -D && nginx -g 'daemon off;'"]
