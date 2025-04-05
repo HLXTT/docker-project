@@ -42,7 +42,7 @@
             case 'add_poster':
                 include 'add_poster.php';
                 break;
-            case 'user_info';
+            case 'user_info':
                 include 'user_info.php';
                 break;
             default:
