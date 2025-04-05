@@ -7,7 +7,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN a2enmod rewrite
 
 # Copy mã nguồn vào container
-COPY ./src /var/www/html
+COPY src/ /var/www/html
 
 # Phân quyền cho thư mục chứa mã nguồn
 RUN chown -R www-data:www-data /var/www/html
