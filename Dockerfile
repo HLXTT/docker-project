@@ -1,22 +1,27 @@
-FROM php:8.1-apache
+FROM php:8.1-fpm
 
-# Cài đặt các extensions cần thiết
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Install system dependencies and PHP extensions
+RUN apt-get update && apt-get install -y \
+    nginx \
+    libpng-dev \
+    libjpeg-dev \
+    && docker-php-ext-install pdo_mysql gd mysqli \
+    && docker-php-ext-enable mysqli \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Kích hoạt module mod_rewrite
-RUN a2enmod rewrite
+# Copy source code
+COPY src/ /var/www/html/
 
-# Copy mã nguồn vào container
-COPY src/ /var/www/html
+# Set proper permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
 
-# Phân quyền cho thư mục chứa mã nguồn
-RUN chown -R www-data:www-data /var/www/html
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Cấu hình ServerName để tránh lỗi
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+# Expose port 8080
+EXPOSE 8080
 
-# Expose cổng 80
-EXPOSE 80
-
-# Start Apache
-CMD ["apachectl", "-D", "FOREGROUND"]
+# Start PHP-FPM and Nginx
+CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
