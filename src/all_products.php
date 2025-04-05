@@ -38,7 +38,7 @@
                 ?>
                     <a href="#">
                         <div class="product">
-                            <img src="docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
+                            <img src="https://docker-project-image-server-production.up.railway.app/images/product/<?php echo $row['image'];?>" alt="product">
                             <div class="product-info">
                                 <h4><?php echo $row['name'];?></h4>
                                 <div class="price">
